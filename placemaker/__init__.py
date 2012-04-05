@@ -173,11 +173,11 @@ class placemaker(object):
         self.doc = self.tree.find('%sdocument' % TAG_PREFIX)
 
         administrative_scope_tree = self.doc.find('%sadministrativeScope' % TAG_PREFIX)
-        if administrative_scope_tree:
+        if administrative_scope_tree is not None:
             self.administrative_scope = AdministrativeScope(administrative_scope_tree)
 
         geographic_scope_tree = self.doc.find('%sgeographicScope' % TAG_PREFIX)
-        if geographic_scope_tree:
+        if geographic_scope_tree is not None:
             self.geographic_scope = GeographicScope(geographic_scope_tree)
 
         place_details = self.doc.findall('%splaceDetails' % TAG_PREFIX)
